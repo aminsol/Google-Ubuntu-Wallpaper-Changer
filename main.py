@@ -18,6 +18,7 @@ with urllib.request.urlopen('https://clients3.google.com/cast/chromecast/home/')
         json_string = eval("b\"%s\""% ascii_json).decode('utf-8').replace('\\/', '/')
         json_value = json.loads(json_string)
         photo_url = random.choice(json_value[0])[0]
+        photo_url = photo_url.replace('1920', '2160')
         print(photo_url)
         newBackgroundFile = path.expanduser('~') + '/Pictures/Google-Wallpapers/' + str(date.today()) + '.jpeg'
         result = urllib.request.urlretrieve(photo_url, newBackgroundFile)
