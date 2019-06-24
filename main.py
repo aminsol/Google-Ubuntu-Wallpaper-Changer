@@ -17,7 +17,8 @@ if __name__ == '__main__':
             json_string = ascii_json.replace('\\/', '/').replace('\\n', '')
             json_value = json.loads(json_string)
             photo_url = random.choice(json_value[0])[0]
-            photo_url = photo_url.replace('1920', '2160')
+            photo_url = photo_url.replace('1920', '3840')
+            photo_url = photo_url.replace('1080', '1920')
             print(photo_url)
             newBackgroundFile = path.expanduser('~') + '/Pictures/Google-Wallpapers/' + str(date.today()) + '.jpeg'
             result = urllib.request.urlretrieve(photo_url, newBackgroundFile)
